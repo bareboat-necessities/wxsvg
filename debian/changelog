@@ -1,3 +1,8 @@
+wxsvg (2:1.5.22+dfsg.2a-1) unstable; urgency=medium
+
+  [ mgrouch ]
+  * arm 32 and 64
+
 wxsvg (2:1.5.22+dfsg.1-1) unstable; urgency=medium
 
   [ Alec Leamas ]

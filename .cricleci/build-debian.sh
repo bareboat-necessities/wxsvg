@@ -26,9 +26,23 @@ WORK_DIR=$(pwd):/ci-source
 docker run --privileged --security-opt="seccomp=unconfined" --cap-add=ALL -d -ti -e "container=docker"  -v $WORK_DIR:rw $DOCKER_IMAGE /bin/bash
 DOCKER_CONTAINER_ID=$(docker ps --last 4 | grep $CONTAINER_DISTRO | awk '{print $1}')
 
+docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec \
+  "wget -q 'https://dl.cloudsmith.io/public/bbn-projects/bbn-repo/cfg/gpg/gpg.070C975769B2A67A.key' -O- | apt-key add -"
+docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec \
+  "wget -q 'https://dl.cloudsmith.io/public/bbn-projects/bbn-repo/cfg/setup/config.deb.txt?distro=${PKG_DISTRO}&codename=${PKG_RELEASE}' -O- | tee -a /etc/apt/sources.list"
+
 docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get update
 docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y install dpkg-dev debhelper devscripts equivs pkg-config apt-utils fakeroot
-docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y install build-essential dh-exec
+docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y install build-essential dh-exec \
+ libavcodec-dev        \
+ libavformat-dev       \
+ libavutil-dev         \
+ libexif-dev           \
+ libexpat-dev          \
+ libpango1.0-dev       \
+ libswscale-dev        \
+ libwxgtk3.1-gtk3-dev  \
+ pkg-config
 
 #docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y upgrade
 docker exec --privileged -ti $DOCKER_CONTAINER_ID ldconfig
