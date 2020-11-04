@@ -1,11 +1,11 @@
 wxsvg (2:1.5.22+dfsg.2a-1) unstable; urgency=medium
 
-  [ mgrouch ]
   * arm 32 and 64
+
+  -- mgrouch <mgrouch@users.github.com>  Wed, 4 Nov 2020 11:41:45 -0400
 
 wxsvg (2:1.5.22+dfsg.1-1) unstable; urgency=medium
 
-  [ Alec Leamas ]
   * New upstream version
   * Update Standards-Version to 4.5.0, no changes
   * Update compat level to 13.
@@ -13,7 +13,6 @@ wxsvg (2:1.5.22+dfsg.1-1) unstable; urgency=medium
   * Update upstream/metadata
   * Drop now default -as-needed linker flag.
 
-  [ Sebastian Ramacher ]
   * debian/rules:
     - Remove --with=autoreconf (on by default)
     - Remove dh_missing override (compat 13 defaults to --fail-missing)

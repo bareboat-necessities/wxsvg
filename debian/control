@@ -5,7 +5,7 @@ Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Uploaders:
  Alec Leamas <leamas.alec@gmail.com>
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 12),
  libavcodec-dev,
  libavformat-dev,
  libavutil-dev,
