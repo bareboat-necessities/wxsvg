@@ -1,0 +1,232 @@
+wxsvg (2:1.5.22+dfsg.1-1) unstable; urgency=medium
+
+  [ Alec Leamas ]
+  * New upstream version
+  * Update Standards-Version to 4.5.0, no changes
+  * Update compat level to 13.
+  * Update patch dep-3 info
+  * Update upstream/metadata
+  * Drop now default -as-needed linker flag.
+
+  [ Sebastian Ramacher ]
+  * debian/rules:
+    - Remove --with=autoreconf (on by default)
+    - Remove dh_missing override (compat 13 defaults to --fail-missing)
+  * debian/control:
+    - Remove obsolete Pre-Depends, Breaks, Replaces
+    - Remove ${shlibs:Deps} from -dev
+
+ -- Alec Leamas <leamas.alec@gmail.com>  Sun, 20 Sep 2020 11:10:02 +0200
+
+wxsvg (2:1.5.21+dfsg.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop upstreamed patch 0002 (invalid color asserts)
+  * Move to gtk3, part of Debian overall effort.
+    Closes: #933462
+  * Bump Standards-version, add Rules-Requires-Root=no
+  * Drop unused, false positive lintian overrides.
+
+ -- Alec Leamas <leamas.alec@gmail.com>  Wed, 04 Dec 2019 13:35:44 -0500
+
+wxsvg (2:1.5.15+dfsg.2-1) unstable; urgency=medium
+
+  * Re-introduce wxsvg to Debian, latest upstream release.
+  * New -tools package with svgview viewer.
+  * Update dfsg versioning scheme.
+  * Drop get-orig-source in favor of regular uscan download.
+  * Add hardening build flags.
+  * Move to libwxsvg3 to match soname.
+  * Add rudimentary d/upstream/metadata.
+  * Bump Standards-Version.
+  * Add libexif build dependency.
+  * Drop libav10 patch
+  * Drop --with-scour build dependency.
+  * Drop bundled but generated files from package.
+  * Drop obsolete version requirement on libpango1.0-dev.
+  * Drop obsolete g++  and dh_autoreconf dependencies.
+
+ -- Alec Leamas <leamas.alec@gmail.com>  Mon, 17 Sep 2018 21:13:56 +0200
+
+wxsvg (2:1.4~dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * Rename libwxsvg2 to libwxsvg2v5 for GCC 5 transition. (Closes: #791324)
+  * debian/control: Bump Standards-Version (no changes required).
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 02 Aug 2015 17:55:31 +0200
+
+wxsvg (2:1.4~dfsg-2) unstable; urgency=medium
+
+  * Fix file conflict between libwxsvg0 and libxwsvg2. (Closes: #751710)
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 24 Jun 2014 19:16:28 +0100
+
+wxsvg (2:1.4~dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Switch to dh-autoreconf. (Closes: #746933)
+  * Refresh patches.
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 15 Jun 2014 14:44:18 +0100
+
+wxsvg (2:1.3~dfsg-2) unstable; urgency=low
+
+  * Migrate to wxWidgets 3.0.
+    Thanks to Olly Betts for the patch. (Closes: #748722)
+  * Fix SONAME.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 11 Jun 2014 14:51:08 +0100
+
+wxsvg (2:1.3~dfsg-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * Update libav10.patch against the new sources.
+  * Update copyright holders list.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 15 Apr 2014 15:34:05 +0100
+
+wxsvg (2:1.2~dfsg0-2) unstable; urgency=medium
+
+  * Team upload.
+  * debian/patches/libav10.patch: Fix build error with libav 10. Thanks to
+    Anton Khirnov for the patch. (Closes: #739454)
+  * debian/control: Bump Standards-Version, no changes required.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 25 Feb 2014 14:08:46 +0100
+
+wxsvg (2:1.2~dfsg0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 07 Oct 2013 14:14:39 +0100
+
+wxsvg (2:1.1.15~dfsg0-1) unstable; urgency=low
+
+  * Upload to unstable.
+
+  [ Fabrice Coutadeur ]
+  * Imported Upstream version 1.1.15~dfsg0
+  * debian/control: update Standards-version to 3.9.4. No changes required.
+  * add myself to uploaders
+
+  [ Sebastian Ramacher ]
+  * debian/control: Use canonical VCS-* URLs.
+
+ -- Fabrice Coutadeur <coutadeurf@gmail.com>  Fri, 30 Aug 2013 20:21:42 +0200
+
+wxsvg (2:1.1.9~dfsg0-1) experimental; urgency=low
+
+  * Team upload.
+
+  [ Alessio Treglia ]
+  * Imported Upstream version 1.1.9~dfsg0
+
+  [ Reinhard Tartler ]
+  * upload to experimental
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 10 Nov 2012 18:07:20 +0100
+
+wxsvg (2:1.1.8~dfsg0-2) unstable; urgency=low
+
+  * Don't provide example files to avoid arch-specific contents in
+    arch-independent paths. (Closes: #670032)
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 23 Apr 2012 02:05:08 +0200
+
+wxsvg (2:1.1.8~dfsg0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Convert to Multi-Arch.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 20 Apr 2012 11:56:26 +0200
+
+wxsvg (2:1.1.7~dfsg0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Delete 0001-adapt_to_libav_0_8.patch, applied upstream.
+  * Update debian/copyright.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 04 Apr 2012 12:21:00 +0200
+
+wxsvg (2:1.1.6~dfsg-1) unstable; urgency=low
+
+  * New upstream release:
+    - added support of clipPath element
+    - added support of visibility style property
+    - fixed handling of aspect ratio of video
+  * Fix FTBFS due to new libav 0.8 by adding missing header files
+    (Closes: #654229)
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 05 Feb 2012 14:03:10 +0100
+
+wxsvg (2:1.1.5~dfsg0-1) unstable; urgency=low
+
+  * New upstream release:
+    - Release 1.1.5:
+      + wxSVGTextContentElement: added handling of xml:space attribute
+      + wxSVGVideoElement: added handling of attributes begin, dur,
+        clipBegin and clipEnd
+    - Release 1.1.4:
+      + Add SVG image handler.
+    - Release 1.1.3:
+      + SVGImageElement: added support of SVG images
+  * Convert -DEV package to Architecture: any.
+  * Drop dh-autoreconf.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 07 Dec 2011 12:11:49 +0100
+
+wxsvg (2:1.1.2~dfsg0-1) unstable; urgency=low
+
+  * New upstream release:
+    - added handling of preserveAspectRatio attribute
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 20 Aug 2011 11:23:11 +0200
+
+wxsvg (2:1.1.1~dfsg0-1) unstable; urgency=low
+
+  * New upstream release:
+    - Fix text rendering.
+    - Fix rendering of video.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 05 Aug 2011 09:34:59 +0200
+
+wxsvg (2:1.1.0~dfsg-1) unstable; urgency=low
+
+  * New upstream release:
+    - Fix FTBFS with libav (Closes: #632679).
+  * Drop build-dep on libart-2.0-dev.
+  * Don't repack after downloading the tarball.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 26 Jul 2011 10:23:59 +0200
+
+wxsvg (2:1.0.10~dfsg0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Enable parallel builds.
+  * Fix watch file.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 17 Jun 2011 11:41:05 +0200
+
+wxsvg (2:1.0.9~dfsg0-1) unstable; urgency=low
+
+  * New upstream release:
+    - Fix wxSVGCanvasImage::GetDefaultHeight().
+  * Remove 0001-buildsystem.patch as it has been adopted upstream.
+  * Improve get-orig-source rule.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 06 Jun 2011 12:09:18 +0200
+
+wxsvg (2:1.0.8.1~dfsg-2) unstable; urgency=low
+
+  * Introduce epoch to overwrite Marillat's d-m.org packages.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 18 Apr 2011 15:57:16 +0200
+
+wxsvg (1.0.8.1~dfsg-1) unstable; urgency=low
+
+  * Initial release (Closes: #617903).
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 13 Mar 2011 10:02:28 +0100

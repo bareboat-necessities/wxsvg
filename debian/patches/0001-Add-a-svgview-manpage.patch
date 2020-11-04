@@ -1,0 +1,47 @@
+From: Alec Leamas <leamas.alec@nowhere.net>
+Date: Sun, 23 Sep 2018 00:30:09 -0400
+Subject: Add a svgview manpage.
+
+Forwarded: https://sourceforge.net/p/wxsvg/discussion/424987/thread/8ca0ea91ff/
+
+---
+ Makefile.am |  1 +
+ svgview.1   | 17 +++++++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 svgview.1
+
+diff --git a/Makefile.am b/Makefile.am
+index 0885d0d..0faa503 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -4,6 +4,7 @@ ACLOCAL_AMFLAGS = -I m4
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libwxsvg.pc
+ EXTRA_DIST     = libwxsvg.pc.in
++man_MANS       = svgview.1
+ 
+ run: all
+ 	$(MAKE) -C svgview run
+diff --git a/svgview.1 b/svgview.1
+new file mode 100644
+index 0000000..8c14d39
+--- /dev/null
++++ b/svgview.1
+@@ -0,0 +1,17 @@
++.\"                                      Hey, EMACS: -*- nroff -*-
++.\" (C) Copyright 2018 Alec Leamas <leamas.alec@gmail.com>,
++.\"
++.TH svgview 1 "Sep 2018"
++
++.SH NAME
++svgview \- Simple tool to view SVG files.
++.SH SYNOPSIS
++.B svgview
++.RI \<svg file\> 
++
++.SH DESCRIPTION
++A simple, lightweight GUI tool to view SVG files
++
++.SH OPTIONS
++
++There are no command-line options.

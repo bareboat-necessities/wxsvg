@@ -1,0 +1,3 @@
+# As of now, there are no upstream gpg signatures, see
+# https://sourceforge.net/p/wxsvg/discussion/424987/thread/98cd07e5/#c380
+wxsvg source: debian-watch-does-not-check-gpg-signature

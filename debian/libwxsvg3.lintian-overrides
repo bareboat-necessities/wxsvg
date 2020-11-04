@@ -1,0 +1,3 @@
+# Using a symbols file for C++ code doesn't work that well, see e. g.
+# https://www.eyrie.org/~eagle/journal/2012-02/001.html
+libwxsvg3 binary: no-symbols-control-file
