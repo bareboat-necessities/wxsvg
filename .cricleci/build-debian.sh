@@ -48,10 +48,7 @@ docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y install build-essen
 docker exec --privileged -ti $DOCKER_CONTAINER_ID ldconfig
 
 docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec \
-    "mkdir SVG; cd SVG; wget http://deb.debian.org/debian/pool/main/w/wxsvg/wxsvg_1.5.22+dfsg.1.orig.tar.xz; gzip -cd < wxsvg_1.5.22+dfsg.1.orig.tar.xz | tar xvf -; cd wxsvg_1.5.22/; wget http://deb.debian.org/debian/pool/main/w/wxsvg/wxsvg_1.5.22+dfsg.1-1.debian.tar.xz; xzcat wxsvg_1.5.22+dfsg.1-1.debian.tar.xz | tar xvf -; dpkg-buildpackage -b -uc -us -j2; dpkg -i ../*.deb; cd ../../"
-
-docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec \
-    "update-alternatives --set fakeroot /usr/bin/fakeroot-tcp; cd ci-source; dpkg-buildpackage -b -uc -us -j2; mkdir dist; mv ../*.deb dist; chmod -R a+rw dist "
+    "update-alternatives --set fakeroot /usr/bin/fakeroot-tcp; cd ci-source; mkdir SVG; cd SVG; wget http://deb.debian.org/debian/pool/main/w/wxsvg/wxsvg_1.5.22+dfsg.1.orig.tar.xz; gzip -cd < wxsvg_1.5.22+dfsg.1.orig.tar.xz | tar xvf -; cd wxsvg_1.5.22/; cp -r ../debian . ; dpkg-buildpackage -b -uc -us -j2; dpkg -i ../*.deb; cd ../../"
 
 docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec "mv SVG/*.deb ci-source/dist"
 
