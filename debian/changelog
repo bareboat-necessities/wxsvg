@@ -12,13 +12,12 @@ wxsvg (2:1.5.22+dfsg.1-1) unstable; urgency=medium
   * Update patch dep-3 info
   * Update upstream/metadata
   * Drop now default -as-needed linker flag.
-
   * debian/rules:
-    - Remove --with=autoreconf (on by default)
-    - Remove dh_missing override (compat 13 defaults to --fail-missing)
+    Remove --with=autoreconf (on by default)
+    Remove dh_missing override (compat 13 defaults to --fail-missing)
   * debian/control:
-    - Remove obsolete Pre-Depends, Breaks, Replaces
-    - Remove ${shlibs:Deps} from -dev
+    Remove obsolete Pre-Depends, Breaks, Replaces
+    Remove ${shlibs:Deps} from -dev
 
  -- Alec Leamas <leamas.alec@gmail.com>  Sun, 20 Sep 2020 11:10:02 +0200
 
