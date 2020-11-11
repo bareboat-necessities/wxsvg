@@ -13,7 +13,7 @@ Build-Depends:
  libexpat-dev,
  libpango1.0-dev,
  libswscale-dev,
- libwxgtk3.1-gtk3-dev,
+ libwxgtk3.1-dev,
  pkg-config
 Standards-Version: 4.5.0
 Vcs-Git: https://salsa.debian.org/multimedia-team/wxsvg.git
