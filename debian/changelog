@@ -1,4 +1,4 @@
-wxsvg (2:1.5.15+dfsg.2-1) unstable; urgency=medium
+wxsvg (2:1.5.16a+dfsg.2-1) unstable; urgency=medium
 
   * Re-introduce wxsvg to Debian, latest upstream release.
   * New -tools package with svgview viewer.
