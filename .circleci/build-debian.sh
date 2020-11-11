@@ -44,8 +44,7 @@ docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y install build-essen
  libexpat-dev          \
  libpango1.0-dev       \
  libswscale-dev        \
- libwxgtk3.1-dev  \
- pkg-config
+ libwxgtk3.1-dev
 
 #docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y upgrade
 docker exec --privileged -ti $DOCKER_CONTAINER_ID ldconfig
