@@ -1,37 +1,3 @@
-wxsvg (2:1.5.22+dfsg.2a-1) unstable; urgency=medium
-
-  * arm 32 and 64
-
- -- mgrouch <mgrouch@users.github.com>  Wed, 4 Nov 2020 11:41:45 -0400
-
-wxsvg (2:1.5.22+dfsg.1-1) unstable; urgency=medium
-
-  * New upstream version
-  * Update Standards-Version to 4.5.0, no changes
-  * Update compat level to 13.
-  * Update patch dep-3 info
-  * Update upstream/metadata
-  * Drop now default -as-needed linker flag.
-  * debian/rules:
-    Remove --with=autoreconf (on by default)
-    Remove dh_missing override (compat 13 defaults to --fail-missing)
-  * debian/control:
-    Remove obsolete Pre-Depends, Breaks, Replaces
-    Remove ${shlibs:Deps} from -dev
-
- -- Alec Leamas <leamas.alec@gmail.com>  Sun, 20 Sep 2020 11:10:02 +0200
-
-wxsvg (2:1.5.21+dfsg.1-1) unstable; urgency=medium
-
-  * New upstream release
-  * Drop upstreamed patch 0002 (invalid color asserts)
-  * Move to gtk3, part of Debian overall effort.
-    Closes: #933462
-  * Bump Standards-version, add Rules-Requires-Root=no
-  * Drop unused, false positive lintian overrides.
-
- -- Alec Leamas <leamas.alec@gmail.com>  Wed, 04 Dec 2019 13:35:44 -0500
-
 wxsvg (2:1.5.15+dfsg.2-1) unstable; urgency=medium
 
   * Re-introduce wxsvg to Debian, latest upstream release.
