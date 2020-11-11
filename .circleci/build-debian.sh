@@ -50,7 +50,7 @@ docker exec --privileged -ti $DOCKER_CONTAINER_ID apt-get -y install build-essen
 docker exec --privileged -ti $DOCKER_CONTAINER_ID ldconfig
 
 docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec \
-    "update-alternatives --set fakeroot /usr/bin/fakeroot-tcp; cd ci-source; mkdir SVG; cd SVG; wget http://deb.debian.org/debian/pool/main/w/wxsvg/wxsvg_1.5.15+dfsg.2.orig.tar.bz2; bzip2 -cd wxsvg_1.5.15+dfsg.2.orig.tar.bz2 | tar xvf -; cd wxsvg-1.5.15/; cp -r ../../debian . ; dpkg-buildpackage -b -uc -us -j2; cd ../../../"
+    "update-alternatives --set fakeroot /usr/bin/fakeroot-tcp; cd ci-source; mkdir SVG; cd SVG; wget http://deb.debian.org/debian/pool/main/w/wxsvg/wxsvg_1.5.15+dfsg.2.orig.tar.bz2; bzip2 -cd wxsvg_1.5.15+dfsg.2.orig.tar.bz2 | tar xvf -; cd wxsvg-1.5.15/; cp -r ../../debian . ; DEB_CXXFLAGS_SET=\"-D__WXGTK20__\" dpkg-buildpackage -b -uc -us -j2; cd ../../../"
 
 docker exec --privileged -ti $DOCKER_CONTAINER_ID /bin/bash -xec "cd ci-source; mkdir dist; mv SVG/*.deb dist; chmod -R a+rw dist"
 
